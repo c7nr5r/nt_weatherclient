@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/toastify.min.css">
+  <script src="js/script.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="header">
+    <div class="title">Aktuelle Wetterinformationen</div>
+  </div>
+    <div class="content">
+      <div class="search">
+        <div class="title">Stadtnamen eingeben</div>
+        <input type="text" id="cityName" value="Erfurt" />
+        <input type="button" id="searchCity" value="Stadt suchen" onclick="getWeatherForCity($('searchCity').value);"  />
+      </div>
+      <div class="result" style="display: none;">
+        <div class="title"></div>
+        <div class="measurement" source="main.temp"><div class="caption">Temperatur:&nbsp;</div><div class="value"></div><div class="unit">&nbsp;°C</div></div>
+        <div class="measurement" source="main.pressure"><div class="caption">Luftdruck:&nbsp;</div><div class="value"></div><div class="unit">&nbsp;hPa</div></div>
+        <div class="measurement" source="main.humidity"><div class="caption">Feuchtigkeit:&nbsp;</div><div class="value"></div><div class="unit">%</div></div>
+        <div class="measurement" source="main.temp_min"><div class="caption">geringste Temperatur:&nbsp;</div><div class="value"></div><div class="unit">&nbsp;°C</div></div>
+        <div class="measurement" source="main.temp_max"><div class="caption">höchste Temperatur:&nbsp;</div><div class="value"></div><div class="unit">&nbsp;°C</div></div>
+        <div class="measurement" source="wind.speed"><div class="caption">Windgeschwindigkeit:&nbsp;</div><div class="value"></div><div class="unit">&nbsp;m/s</div></div>
+        <div class="measurement" source="wind.deg"><div class="caption">Windrichtung:&nbsp;</div><div class="value"></div><div class="unit">°</div></div>
+        <div class="measurement" source="weather[0].description"><div class="caption">Wetter:&nbsp;</div><div class="value"></div><div class="unit"></div></div>
+      </div>
+    </div>
+    <div class="footer">
+      <input style="float:right; border:none; background-color:unset; color:white" type="text" id="apiUrl" placeholder="Insert local api url here..." />
+      <input style="float:right; border:none; background-color:unset; color:white" type="text" id="apiKey" placeholder="Insert api key here..." />
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/toastify-js.js"></script>
